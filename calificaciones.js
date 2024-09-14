@@ -90,7 +90,7 @@ function mostrarEstudiantes() {
         resultadoDiv += `${estudiante.nombre} - Promedio: ${estudiante.obtenerPromedio().toFixed(2)} <br>`;
     });
 
-    document.getElementById('resultados').innerHTML = resultadoHtml;
+    document.getElementById('resultados').innerHTML = resultadoDiv;
 }
 
 
