@@ -47,12 +47,12 @@ function mostrarTareas() {
     tareas.forEach((tarea, index) => {
         const estado = tarea.completado ? "Completada" : "Pendiente";
         const clase = tarea.completado ? 'completado' : '';
-        const listaHTML = `<li class="${clase}">${index + 1}. ${tarea.descripcion} - ${estado}</li>`;
+        const listaDiv = `<li class="${clase}">${index + 1}. ${tarea.descripcion} - ${estado}</li>`;
 
         if (tarea.completado) {
-            listaCompletadas.innerHTML += listaHTML;
+            listaCompletadas.innerHTML += listaDiv;
         } else {
-            listaPendientes.innerHTML += listaHTML;
+            listaPendientes.innerHTML += listaDiv;
         }
     });
 }
