@@ -31,7 +31,7 @@ function agregarEstudiante() {
     const calificacionesStr = document.getElementById('calificaciones').value; //"8, 9, 7, 6"
     
     if (nombre && calificacionesStr) {
-        const calificaciones = calificacionesStr.split(',').map(num => parseFloat(num.trim())); //["8", " 9", " 7", " 6"] - " 9" -> "9"
+        const calificaciones = calificacionesStr.split(',').map(num => parseFloat(num.trim())); //['8', ' 9', " 7", " 6"] - " 9" -> "9"
         if (calificaciones.every(num => !isNaN(num))) { //False: "8", "9", "7", "seis"
             estudiantes.push(new Estudiante(nombre, calificaciones));
             document.getElementById('nombreEstudiante').value = '';
@@ -67,7 +67,7 @@ function mostrarEstudiantes() {
     estudiantesDestacados.sort((a, b) => b.obtenerPromedio() - a.obtenerPromedio());
     
     // Limitar el número de estudiantes destacados a 5
-    estudiantesDestacados = estudiantesDestacados.slice(0, 5);
+    estudiantesDestacados = estudiantesDestacados.slice(0, 5); //0 -> 4 = 5 estudiantes
 
     // Filtrar estudiantes con promedio inferior al promedio general
     let estudiantesBajos = estudiantes.filter(estudiante => estudiante.obtenerPromedio() <= promedioGeneral);
